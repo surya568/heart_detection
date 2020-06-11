@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %} {% if error %} {{error}} 
+{% endif %}
+<form
+  method="POST"
+  action="{% url 'signup' %}"
+  style="z-index: 1;"
+  style="position: absolute;"
+>
+  {% csrf_token %}
+  <div class="container">
+    <div style="background-color: tan;" style="border: 3px solid red;">
+      <h1 class="left2" style="font-size: 35px;">Sign Up</h1>
+      <p class="left">
+        Please fill in this form to create an account.
+      </p>
+      <label for="username" class="left"><b>username</b></label>
+      <br />
+      <input
+        class="left"
+        type="text"
+        placeholder="Enter username"
+        name="username"
+        required
+      />
+      <br />
+      <label for="email" class="left"><b>Email</b></label>
+      <br />
+      <input
+        type="text"
+        placeholder="Enter Email"
+        name="email"
+        class="left"
+        required
+      />
+      <br />
+      <label for="psw" class="left"><b>Password</b></label>
+      <br />
+      <input
+        class="left"
+        type="password"
+        placeholder="Enter Password"
+        name="password1"
+        required
+      />
+      <br />
+      <label for="psw-repeat" class="left"><b>Repeat Password</b></label>
+      <br />
+      <input
+        class="left"
+        type="password"
+        placeholder="Repeat Password"
+        name="password2"
+        required
+      />
+      <br />
+
+      <br />
+      <input
+        class="left2"
+        class="btn btn primary"
+        style="color: blue;"
+        class="left"
+        type="submit"
+        value="signup"
+      />
+      <br />
+    </div>
+  </div>
+</form>
+{% endblock %}

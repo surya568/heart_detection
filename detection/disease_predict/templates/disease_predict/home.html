@@ -1,0 +1,168 @@
+<html>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <form
+      method="POST"
+      action="{% url 'detect' %}"
+      enctype="multipart/form-data"
+      style="background-color: cadetblue;"
+    >
+      {% csrf_token %}
+      <div
+        class="container"
+        style="height: 730px;"
+        style="border: 5px solid red;"
+      >
+        {% if user.is_authenticated %}
+        <label class="left" style="color: chartreuse;">Enter your Name</label>
+        <input
+          type="text"
+          class="form"
+          placeholder="enter your name"
+          name="title"
+          style="margin-left: 19px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">Enter your age</label>
+        <input
+          type="text"
+          class="form"
+          placeholder="age"
+          style="margin-left: 40px;"
+          name="age"
+          required
+        />
+        <br />
+        <br />
+        <label for="gender" class="left" style="color: chartreuse;"
+          >Gender:</label
+        >
+        <select style="margin-left: 110px;" class="form" name="sex" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Female">other</option>
+        </select>
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">
+          cigarettes perday</label
+        >
+        <input
+          class="form"
+          type="text"
+          placeholder="cidperday"
+          name="cigsperday"
+          style="margin-left: 18px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">BPMeds -</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="BP Meds"
+          name="BPmeds"
+          style="margin-left: 82px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">prevalent stroke</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="enter your prevalentstroke"
+          name="stroke"
+          style="margin-left: 25px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">prevalent hyp</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="enter your prevalenthyp"
+          name="hyp"
+          style="margin-left: 42px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">Diabetes level</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="diabetes"
+          name="diabetes"
+          style="margin-left: 40px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">SisBP</label>
+        <input
+          type="text"
+          class="form"
+          placeholder="enter your sisBP"
+          name="sisBP"
+          style="margin-left: 120px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">DiaBP</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="enter your diaBP"
+          name="diaBP"
+          style="margin-left: 115px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">Body Mass Index</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="enter your BMI"
+          name="BMI"
+          style="margin-left: 10px;"
+          required
+        />
+        <br />
+        <br />
+        <label class="left" style="color: chartreuse;">heartRate</label>
+        <input
+          class="form"
+          type="text"
+          placeholder="enter your heartrate"
+          name="heartrate"
+          style="margin-left: 85px;"
+          required
+        />
+        <br />
+        <br />
+        <input
+          style="background-color: cyan;"
+          class="left2"
+          class="btn btn_primary"
+          type="submit"
+          value="Done"
+        />
+        {% else %}
+        <div>
+          <h> YOU NEED TO BE SIGN UP </h>
+        </div>
+        {% endif %}
+      </div>
+    </form>
+  </body>
+</html>

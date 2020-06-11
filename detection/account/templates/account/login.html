@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %} 
+{% if error %} 
+    {{error}} 
+    {% endif %}
+<form method="POST" action="{% url 'login' %}" style="border: 1px solid #ccc;">
+  {% csrf_token %}
+  <div class="container" style="background-color: tan;" style="border: 3px solid red;" >
+    <h1 class="left2"> Login</h1>
+    <hr />
+
+    <label for="email" class="left"><b>Email</b></label>
+    <br />
+    <input type="text" class="left" placeholder="Enter Email" name="username" required />
+    <br />
+    <label for="psw" class="left"><b>Password</b></label>
+    <br />
+    <input
+    class="left"
+      type="password"
+      placeholder="Enter Password"
+      name="password"
+      required
+    />
+    <br />
+    <br />
+    <input class="left2" type="submit" value="login" />
+    <br />
+    <br />
+  </div>
+</form>
+{% endblock %}
